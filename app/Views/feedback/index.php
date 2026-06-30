@@ -44,11 +44,11 @@
                 <?php foreach ($messages as $msg): ?>
                     <div class="message">
                         <div class="message-header">
-                            <strong><?= $msg['full_name'] ?></strong>
-                            <span class="date"><?= $msg['created_at'] ?></span>
+                            <strong><?= htmlspecialchars($msg['full_name'], ENT_QUOTES, 'UTF-8') ?></strong>
+                            <span class="date"><?= htmlspecialchars($msg['created_at'], ENT_QUOTES, 'UTF-8') ?></span>
                         </div>
-                        <div class="message-email"><?= $msg['email'] ?></div>
-                        <div class="message-body"><?= nl2br($msg['message']) ?></div>
+                        <div class="message-email"><?= htmlspecialchars($msg['email'], ENT_QUOTES, 'UTF-8') ?></div>
+                        <div class="message-body"><?= nl2br(htmlspecialchars($msg['message'], ENT_QUOTES, 'UTF-8')) ?></div>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>

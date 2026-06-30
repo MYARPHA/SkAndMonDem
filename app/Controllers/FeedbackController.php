@@ -40,11 +40,7 @@ class FeedbackController extends Controller
             $this->json(['success' => false, 'errors' => $errors], 422);
         }
 
-        $this->feedbackModel->save(
-            $this->sanitize($fullName),
-            $this->sanitize($email),
-            $this->sanitize($message)
-        );
+        $this->feedbackModel->save($fullName, $email, $message);
 
         $this->json(['success' => true]);
     }
@@ -76,8 +72,4 @@ class FeedbackController extends Controller
         return $errors;
     }
 
-    private function sanitize(string $value): string
-    {
-        return htmlspecialchars($value, ENT_QUOTES | ENT_HTML5, 'UTF-8', false);
-    }
 }
