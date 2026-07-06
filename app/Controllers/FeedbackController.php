@@ -18,7 +18,7 @@ class FeedbackController extends Controller
     private Feedback $feedbackModel;
 
     /**
-     * Инициализируем модель для работы с БД.
+     * Инициализация модели для работы с БД
      */
     public function __construct()
     {
@@ -26,8 +26,8 @@ class FeedbackController extends Controller
     }
 
     /**
-     * GET / — главная страница.
-     * Рендерит форму и выводит список уже отправленных сообщений.
+     * GET / — главная страница
+     * Рендерит форму и выводит список уже отправленных сообщений
      */
     public function index(): void
     {
@@ -36,8 +36,7 @@ class FeedbackController extends Controller
     }
 
     /**
-     * GET /list — AJAX-эндпоинт.
-     * Возвращает список сообщений в формате JSON.
+     * GET /list
      */
     public function list(): void
     {
@@ -46,9 +45,9 @@ class FeedbackController extends Controller
     }
 
     /**
-     * POST /submit — AJAX-эндпоинт.
-     * Принимает данные формы, валидирует и сохраняет в БД.
-     * Валидация происходит на стороне сервера (обязательные поля, формат email, длина).
+     * POST /submit
+     * Принимает данные формы, валидирует и сохраняет в БД
+     * Валидация происходит на стороне сервера (обязательные поля, формат email, длина)
      */
     public function submit(): void
     {
@@ -57,7 +56,7 @@ class FeedbackController extends Controller
         $email    = trim($_POST['email'] ?? '');
         $message  = trim($_POST['message'] ?? '');
 
-        // Валидируем поля
+        // Валидация полей
         $errors = $this->validate($fullName, $email, $message);
 
         // Если есть ошибки — возвращаем 422 с описанием
@@ -72,9 +71,9 @@ class FeedbackController extends Controller
     }
 
     /**
-     * Валидирует поля формы.
-     * Проверки: не пустое, длина, формат email.
-     * Ошибки возвращаются ассоциативным массивом (поле => текст ошибки).
+     * Валидация поля формы
+     * Проверки: не пустое, длина, формат email
+     * Ошибки возвращаются ассоциативным массивом (поле -> текст ошибки)
      */
     private function validate(string $fullName, string $email, string $message): array
     {

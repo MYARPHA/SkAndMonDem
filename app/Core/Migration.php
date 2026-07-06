@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Скрипт миграции БД.
+ * Скрипт миграции БД
  * Создаёт базу данных и таблицу feedbacks,
- * если они ещё не существуют.
+ * если они ещё не существуют
  */
 
 declare(strict_types=1);
@@ -18,13 +18,13 @@ class Migration
 
     /**
      * Подключается к MySQL без указания конкретной БД,
-     * чтобы иметь возможность создать её.
+     * чтобы иметь возможность создать её
      */
     public function __construct()
     {
         $config = require __DIR__ . '/../../config/database.php';
 
-        // DSN без dbname — подключаемся к серверу, а не к БД
+        // DSN без dbname
         $dsn = sprintf(
             '%s:host=%s;port=%d;charset=%s',
             $config['driver'],
@@ -39,7 +39,7 @@ class Migration
     }
 
     /**
-     * Выполняет миграцию: создаёт БД и таблицу.
+     * Выполняет миграцию: создаёт БД и таблицу
      */
     public function run(): void
     {

@@ -1,13 +1,12 @@
 /*
- * Стили формы обратной связи.
- * Дизайн: пыльно-розовая палитра, стеклянная карточка, тени, анимации.
- * Адаптивная вёрстка (CSS3 + Flexbox).
+ * Стили формы обратной связи
+ * Дизайн: пыльно-розовая палитра, стеклянная карточка, тени, анимации
+ * Адаптивная вёрстка (CSS3 + Flexbox)
  */
 
-/* Подключаем шрифт Inter через Google Fonts */
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Сброс отступов и box-sizing для всех элементов */
 *,
 *::before,
 *::after {
@@ -16,7 +15,6 @@
     padding: 0;
 }
 
-/* Тело страницы: градиентный фон с пыльно-розовыми оттенками */
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(150deg, #f5e1e8 0%, #e8c5d2 40%, #d8a7b9 100%);
@@ -29,7 +27,6 @@ body {
     line-height: 1.6;
 }
 
-/* Основная карточка с эффектом стекла (frosted glass) */
 .container {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(20px);
@@ -45,7 +42,6 @@ body {
     animation: fadeIn 0.6s ease-out;
 }
 
-/* Анимация появления карточки при загрузке */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -57,7 +53,6 @@ body {
     }
 }
 
-/* Заголовок страницы с декоративной линией снизу */
 h1 {
     font-size: 30px;
     font-weight: 700;
@@ -67,7 +62,6 @@ h1 {
     letter-spacing: -0.5px;
 }
 
-/* Розовая линия под заголовком */
 h1::after {
     content: '';
     display: block;
@@ -78,7 +72,6 @@ h1::after {
     margin: 12px auto 0;
 }
 
-/* Подзаголовок */
 .subtitle {
     text-align: center;
     color: #8a7a88;
@@ -86,7 +79,6 @@ h1::after {
     margin-bottom: 36px;
 }
 
-/* Заголовок секции сообщений */
 h2 {
     font-size: 22px;
     font-weight: 600;
@@ -97,23 +89,19 @@ h2 {
     gap: 8px;
 }
 
-/* Иконка перед заголовком */
 h2::before {
     content: '💬';
     font-size: 20px;
 }
 
-/* Форма */
 .feedback-form {
     margin-bottom: 20px;
 }
 
-/* Каждая группа полей (label + input + error) */
 .form-group {
     margin-bottom: 22px;
 }
 
-/* Подписи к полям */
 label {
     display: block;
     margin-bottom: 8px;
@@ -124,7 +112,6 @@ label {
     text-transform: uppercase;
 }
 
-/* Поля ввода */
 input[type="text"],
 input[type="email"],
 textarea {
@@ -139,14 +126,12 @@ textarea {
     color: #2d2b3a;
 }
 
-/* Лёгкое затемнение при наведении */
 input[type="text"]:hover,
 input[type="email"]:hover,
 textarea:hover {
     background: rgba(255, 255, 255, 0.9);
 }
 
-/* Розовая подсветка при фокусе */
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
@@ -156,13 +141,11 @@ textarea:focus {
     box-shadow: 0 0 0 4px rgba(216, 167, 185, 0.15);
 }
 
-/* Текстовая область (сообщение) */
 textarea {
     resize: vertical;
     min-height: 130px;
 }
 
-/* Сообщение об ошибке */
 .error {
     display: block;
     color: #d45a6a;
@@ -172,7 +155,6 @@ textarea {
     font-weight: 500;
 }
 
-/* Кнопка отправки с градиентом */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -193,7 +175,6 @@ textarea {
     overflow: hidden;
 }
 
-/* Затемнение при наведении (псевдоэлемент для плавности) */
 .btn::before {
     content: '';
     position: absolute;
@@ -207,25 +188,21 @@ textarea {
     opacity: 1;
 }
 
-/* Эффект нажатия */
 .btn:active {
     transform: scale(0.98);
 }
 
-/* Контент кнопки поверх псевдоэлемента */
 .btn span,
 .btn svg {
     position: relative;
     z-index: 1;
 }
 
-/* Размер SVG-иконки */
 .btn svg {
     width: 18px;
     height: 18px;
 }
 
-/* Блок успешной отправки */
 .success {
     background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
     color: #2e7d32;
@@ -238,12 +215,10 @@ textarea {
     animation: fadeIn 0.4s ease-out;
 }
 
-/* Скрытый блок */
 .hidden {
     display: none;
 }
 
-/* Разделитель с линиями по бокам */
 .divider {
     display: flex;
     align-items: center;
@@ -263,12 +238,10 @@ textarea {
     background: linear-gradient(90deg, transparent, #e0d4dc, transparent);
 }
 
-/* Минимальная высота для контейнера сообщений */
 #messages-list {
     min-height: 60px;
 }
 
-/* Заглушка, когда сообщений нет */
 .empty {
     text-align: center;
     color: #b8a8b4;
@@ -279,7 +252,6 @@ textarea {
     border: 1px dashed #e0d4dc;
 }
 
-/* Карточка сообщения */
 .message {
     background: linear-gradient(135deg, #faf5f7, #fdfafb);
     border: 1px solid #f0e6ec;
@@ -290,14 +262,12 @@ textarea {
     animation: fadeIn 0.4s ease-out;
 }
 
-/* Лёгкий подъём при наведении */
 .message:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(180, 120, 140, 0.12);
     border-color: #e0d0da;
 }
 
-/* Шапка сообщения: автор + дата */
 .message-header {
     display: flex;
     justify-content: space-between;
@@ -306,14 +276,12 @@ textarea {
     gap: 12px;
 }
 
-/* Блок автора: аватар + имя */
 .message-author {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-/* Круглый аватар с первой буквой имени */
 .avatar {
     width: 40px;
     height: 40px;
@@ -328,21 +296,18 @@ textarea {
     flex-shrink: 0;
 }
 
-/* Имя автора */
 .message-header strong {
     font-size: 15px;
     color: #2d2b3a;
     font-weight: 600;
 }
 
-/* Дата сообщения */
 .date {
     font-size: 12px;
     color: #b8a8b4;
     white-space: nowrap;
 }
 
-/* Email под именем */
 .message-email {
     font-size: 13px;
     color: #c28ea4;
@@ -350,7 +315,6 @@ textarea {
     padding-left: 52px;
 }
 
-/* Текст сообщения */
 .message-body {
     font-size: 15px;
     line-height: 1.7;
