@@ -1,7 +1,15 @@
 <?php
 
+/**
+ * Скрипт для запуска миграции базы данных.
+ * Создаёт БД и таблицу через PHP-класс Migration.
+ *
+ * Запуск: php migrate.php
+ */
+
 declare(strict_types=1);
 
+// Автозагрузка классов проекта
 require __DIR__ . '/vendor/autoload.php';
 
 spl_autoload_register(function (string $class): void {
@@ -22,5 +30,6 @@ spl_autoload_register(function (string $class): void {
 
 use App\Core\Migration;
 
+// Запускаем миграцию
 $migration = new Migration();
 $migration->run();
