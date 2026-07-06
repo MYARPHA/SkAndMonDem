@@ -8,7 +8,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Форма обратной связи</h1>
+        <h1>Обратная связь</h1>
+        <p class="subtitle">Мы будем рады вашим отзывам и предложениям</p>
 
         <form id="feedback-form" class="feedback-form" novalidate>
             <div class="form-group">
@@ -29,12 +30,15 @@
                 <span class="error" id="error-message"></span>
             </div>
 
-            <button type="submit" class="btn">Отправить</button>
+            <button type="submit" class="btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                <span>Отправить</span>
+            </button>
         </form>
 
         <div id="form-success" class="success hidden"></div>
 
-        <hr>
+        <div class="divider">Сообщения</div>
 
         <h2>Отправленные сообщения</h2>
         <div id="messages-list">
@@ -44,7 +48,10 @@
                 <?php foreach ($messages as $msg): ?>
                     <div class="message">
                         <div class="message-header">
-                            <strong><?= htmlspecialchars($msg['full_name'], ENT_QUOTES, 'UTF-8') ?></strong>
+                            <div class="message-author">
+                                <span class="avatar"><?= mb_strtoupper(mb_substr($msg['full_name'], 0, 1)) ?></span>
+                                <strong><?= htmlspecialchars($msg['full_name'], ENT_QUOTES, 'UTF-8') ?></strong>
+                            </div>
                             <span class="date"><?= htmlspecialchars($msg['created_at'], ENT_QUOTES, 'UTF-8') ?></span>
                         </div>
                         <div class="message-email"><?= htmlspecialchars($msg['email'], ENT_QUOTES, 'UTF-8') ?></div>

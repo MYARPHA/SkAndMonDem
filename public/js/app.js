@@ -78,10 +78,14 @@ class FeedbackApp {
         }
 
         const html = messages.map((msg) => {
+            const initial = msg.full_name.charAt(0).toUpperCase();
             return `
                 <div class="message">
                     <div class="message-header">
-                        <strong>${this.escapeHtml(msg.full_name)}</strong>
+                        <div class="message-author">
+                            <span class="avatar">${this.escapeHtml(initial)}</span>
+                            <strong>${this.escapeHtml(msg.full_name)}</strong>
+                        </div>
                         <span class="date">${this.escapeHtml(msg.created_at)}</span>
                     </div>
                     <div class="message-email">${this.escapeHtml(msg.email)}</div>
