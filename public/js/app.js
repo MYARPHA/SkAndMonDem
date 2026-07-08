@@ -1,7 +1,7 @@
 /**
  * Приложение обратной связи.
  * ES6-класс, использующий fetch API для отправки формы
- * и асинхронной загрузки списка сообщений.
+ * и асинхронной загрузки списка сообщений
  */
 'use strict';
 
@@ -36,7 +36,7 @@ class FeedbackApp {
 
     /** Показывает ошибки валидации под соответствующими полями */
     showErrors(errors) {
-        // errors = { full_name: 'текст', email: 'текст', message: 'текст' }
+        // errors = { full_name: 'текст', phone: 'текст', email: 'текст', message: 'текст' }
         for (const [field, message] of Object.entries(errors)) {
             const errorEl = document.getElementById(`error-${field}`);
             if (errorEl) {
@@ -109,9 +109,10 @@ class FeedbackApp {
                             <span class="avatar">${this.escapeHtml(initial)}</span>
                             <strong>${this.escapeHtml(msg.full_name)}</strong>
                         </div>
-                        <span class="date">${this.escapeHtml(msg.created_at)}</span>
-                    </div>
-                    <div class="message-email">${this.escapeHtml(msg.email)}</div>
+                            <span class="date">${this.escapeHtml(msg.created_at)}</span>
+                        </div>
+                        <div class="message-phone">${this.escapeHtml(msg.phone)}</div>
+                        <div class="message-email">${this.escapeHtml(msg.email)}</div>
                     <div class="message-body">${this.escapeHtml(msg.message).replace(/\n/g, '<br>')}</div>
                 </div>
             `;

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <!--
-  Представление (View) для страницы обратной связи.
-  Содержит HTML5-форму и список отправленных сообщений.
-  Все пользовательские данные экранируются через htmlspecialchars (защита от XSS).
+  Представление для страницы обратной связи
+
 -->
 <html lang="ru">
 <head>
@@ -25,6 +24,13 @@
                 <input type="text" id="full_name" name="full_name" placeholder="Иванов Иван Иванович" required>
                 <span class="error" id="error-full_name"></span>
                 <!-- Сюда JS выводит ошибку валидации для этого поля -->
+            </div>
+
+            <!-- Поле телефона -->
+            <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" name="phone" placeholder="+7XXXXXXXXXX" required>
+                <span class="error" id="error-phone"></span>
             </div>
 
             <!-- Поле Email -->
@@ -72,7 +78,7 @@
                             <!-- Дата отправки -->
                             <span class="date"><?= htmlspecialchars($msg['created_at'], ENT_QUOTES, 'UTF-8') ?></span>
                         </div>
-                        <!-- Email -->
+                        <div class="message-phone"><?= htmlspecialchars($msg['phone'], ENT_QUOTES, 'UTF-8') ?></div>
                         <div class="message-email"><?= htmlspecialchars($msg['email'], ENT_QUOTES, 'UTF-8') ?></div>
                         <!-- Текст сообщения (nl2br — перенос строк) -->
                         <div class="message-body"><?= nl2br(htmlspecialchars($msg['message'], ENT_QUOTES, 'UTF-8')) ?></div>

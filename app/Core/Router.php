@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Простой маршрутизатор (Router).
- * Сопоставляет HTTP-метод и URI с методом контроллера.
+ * Простой маршрутизатор 
+ * Сопоставляет HTTP-метод и URI с методом контроллера
  */
 
 declare(strict_types=1);
@@ -15,7 +15,7 @@ class Router
     private array $routes = [];
 
     /**
-     * Регистрирует GET-маршрут.
+     * Регистрирует GET-маршрут
      */
     public function get(string $uri, array $handler): void
     {
@@ -23,7 +23,7 @@ class Router
     }
 
     /**
-     * Регистрирует POST-маршрут.
+     * Регистрирует POST-маршрут
      */
     public function post(string $uri, array $handler): void
     {
@@ -31,7 +31,7 @@ class Router
     }
 
     /**
-     * Обрабатывает входящий запрос: ищет маршрут и вызывает обработчик.
+     * Обрабатывает входящий запрос: ищет маршрут и вызывает обработчик
      */
     public function dispatch(string $method, string $uri): void
     {
