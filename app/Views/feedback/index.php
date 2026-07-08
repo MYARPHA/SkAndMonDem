@@ -21,7 +21,7 @@
             <!-- Поле ФИО -->
             <div class="form-group">
                 <label for="full_name">ФИО</label>
-                <input type="text" id="full_name" name="full_name" placeholder="Иванов Иван Иванович" required>
+                <input type="text" id="full_name" name="full_name" placeholder="Иванов Иван Иванович">
                 <span class="error" id="error-full_name"></span>
                 <!-- Сюда JS выводит ошибку валидации для этого поля -->
             </div>
@@ -29,21 +29,21 @@
             <!-- Поле телефона -->
             <div class="form-group">
                 <label for="phone">Телефон</label>
-                <input type="tel" id="phone" name="phone" placeholder="+7XXXXXXXXXX" required>
+                <input type="tel" id="phone" name="phone" placeholder="+7XXXXXXXXXX">
                 <span class="error" id="error-phone"></span>
             </div>
 
             <!-- Поле Email -->
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                <input type="email" id="email" name="email" placeholder="example@mail.com">
                 <span class="error" id="error-email"></span>
             </div>
 
             <!-- Поле сообщения -->
             <div class="form-group">
                 <label for="message">Сообщение</label>
-                <textarea id="message" name="message" rows="5" placeholder="Текст сообщения..." required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Текст сообщения..."></textarea>
                 <span class="error" id="error-message"></span>
             </div>
 
